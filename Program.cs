@@ -162,3 +162,60 @@
 // 9       3       6       5       5
 // 4       4       8       3       7
 // 10      4       0       10      5
+
+
+// // Задача 59: Задайтедвумерный массив из целых чисел.
+// // Напишите программу, которая удалит строку и столбец, на
+// // пересечении которых расположен наименьший элемент
+// // массива.
+// int rows = 3;
+// int columns = 3;
+// int[,] matrix = new int[rows, columns];
+// // Матрица изначально заполнена НУЛЯМИ
+// int min = int.MaxValue;
+// // [1000,2000,5000] , min = 5000 (перезапишем, min = 1000)
+// // [5000,5000,5000] , min = 5000 (мы его не трогаем)
+// int indexRow = 0;
+// int indexColumn = 0;
+
+// for (int i = 0; i < rows; i++) // по стр, m = matrix.GetLength(0)
+// {
+//     for (int j = 0; j < columns; j++)// по стлб, n = matrix.GetLength(1)
+//     {
+//         matrix[i, j] = new Random().Next(11); // [0;10]
+//         Console.Write($"{matrix[i, j]}\t");
+//         if (min > matrix[i, j])
+//         {
+//             min = matrix[i, j];
+//             indexRow = i;
+//             indexColumn = j;
+//         }
+//     }
+//     Console.WriteLine();
+// }
+// Console.WriteLine($"min = {min}, [{indexRow}, {indexColumn}]");
+
+
+// for (int i = 0; i < rows; i++)
+// {
+//     if (indexRow != i) // indexRow = 2
+//     // i = 0,1,3,4,5 ...
+//     {
+//         for (int j = 0; j < columns; j++)
+//         {
+//             if (indexColumn != j) //indexColumn = 3
+//             // j = 0,1,2,4,5
+//             {
+//                 Console.Write($"{matrix[i, j]}\t");
+//             }
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// 4       6       0
+// 4       8       6
+// 0       6       4
+// min = 0, [0, 2]
+// 4       8
+// 0       6
